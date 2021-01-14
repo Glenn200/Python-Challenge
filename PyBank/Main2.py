@@ -52,4 +52,7 @@ with open(csvpath) as csvfile:
     print("Average Change: $" + str(round(avgchng,2)))
     print("Greatest Increase in Profits: " + gminc + " ($" + str(int(ginc_profit)) + ")")
     print("Greatest Decrease in Profits: " + gmdec + " ($" + str(int(gdec_profit)) + ")")
-    
+csvpath = os.path.join('Resources', 'budget_data_output.csv'
+with open(csvpath, 'w', newline='') as csvfile:
+    csvwriter = csv.writer(csvfile, delimiter=',')
+    csvwriter.writerow(['Total Months', 'Total', 'Average Change', 'Greatest Increase in Profits', 'Greatest Decrease in Profits'])"
