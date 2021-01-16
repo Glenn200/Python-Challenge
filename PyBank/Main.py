@@ -45,11 +45,22 @@ with open(csvpath) as csvfile:
         pmonth = int(r[1])
     # Average of Profit/Losses
     avgchng = n_profit/(tmonths-1)
-    print("Financial Analysis")
-    print("---------------------------")
-    print("Total Months:  " + str(int(tmonths)))
-    print("Total: $" + str(int(tprofit)))
-    print("Average Change: $" + str(round(avgchng,2)))
-    print("Greatest Increase in Profits: " + gminc + " ($" + str(int(ginc_profit)) + ")")
-    print("Greatest Decrease in Profits: " + gmdec + " ($" + str(int(gdec_profit)) + ")")
-    
+    dhead = "Financial Analysis"
+    dhead2 = "---------------------------"
+    dmths = "Total Months: " + str(int(tmonths))
+    dpft = "Total: $" + str(int(tprofit))
+    davgch = "Average Change: $" + str(round(avgchng,2))
+    dgrtinc = "Greatest Increase in Profits: " + gminc + " ($" + str(int(ginc_profit)) + ")"
+    dgrtdec = "Greatest Decrease in Profits: " + gmdec + " ($" + str(int(gdec_profit)) + ")"
+# Write output to terminal
+print(dhead)
+print(dhead2)
+print(dmths)
+print(dpft)
+print(davgch)
+print(dgrtinc)
+print(dgrtdec)
+#Output results to a test file
+ofile = open("Resources/budget_data_output.txt", "w")
+ofile.write(dhead + "\n" + dhead2 + "\n" + dmths + "\n" + dpft + "\n" + davgch + "\n" + dgrtinc + "\n" +dgrtdec)
+ofile.close()

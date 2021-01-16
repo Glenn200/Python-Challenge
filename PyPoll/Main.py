@@ -1,18 +1,22 @@
 import os, csv
 
-budgetdata = os.path.join('..', 'PyBank','Resources', 'budget.csv')
-with open(budgetdata, 'r') as csvfile:
+csvpath = 'election_data.csv'
+with open(csvpath, 'r') as csvfile:
     # Split  data at commas
     csvreader = csv.reader(csvfile, delimiter=',')
+    #Declare variables
+    tvotes = 0
+    vdata= []
     # Loop through the data
     next(csvreader)
     for r in csvreader:
         # Total Number of months included in Dataset
-        TMonths = TMonths + 1
+        tvotes =+1
+        vdata.append(r)
         # if wstlrname == r[0]: #name of the wrestler
         #    print(wstlrname)
         #    prt_pctg(r) #list
-        print(r)
+        ##print(r)
 
 
 # The net total amount of "Profit/Losses" over the entire period
