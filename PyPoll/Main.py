@@ -1,18 +1,25 @@
 import os, csv
 
 csvpath = 'election_data.csv'
+#Declare variables
+tvotes = 0
+vdata = []
+cands = []
 with open(csvpath, 'r') as csvfile:
     # Split  data at commas
     csvreader = csv.reader(csvfile, delimiter=',')
-    #Declare variables
-    tvotes = 0
-    vdata= []
     # Loop through the data
     next(csvreader)
     for r in csvreader:
         # Total Number of months included in Dataset
         tvotes =+1
         vdata.append(r)
+        for c in r:
+            if r[2] == c:
+                print()
+            else:
+                cands.append(r[2])
+
         # if wstlrname == r[0]: #name of the wrestler
         #    print(wstlrname)
         #    prt_pctg(r) #list
