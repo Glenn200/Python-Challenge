@@ -45,13 +45,13 @@ print("The winner is: " + cands[cvotes.index(max(cvotes))])
 print("---------------------------------------")
 
 #output to text file.
-with open('election_results.txt', 'w') as text:
-    text.write("Election Results\n")
-    text.write("---------------------------------------\n")
-    text.write("Total Vote: " + str(tvotes) + "\n")
-    text.write("---------------------------------------\n")
+with open('election_results.txt', 'w') as txtout:
+    txtout.write("Election Results\n")
+    txtout.write("---------------------------------------\n")
+    txtout.write("Total Vote: " + str(tvotes) + "\n")
+    txtout.write("---------------------------------------\n")
     for i in range(len(cands)):
-        text.write(cands[i] + ': ' + '%.2f'%(cvotes[i] / tvotes*100) + '% (' + str(cvotes[i]) + ')\n')
-    text.write("---------------------------------------\n")
-    text.write("The winner is: " + cands[cvotes.index(max(cvotes))] + "\n")
-    text.write("---------------------------------------\n")
+        txtout.write(cands[i] + ': ' + '%.2f'%(cvotes[i] / tvotes*100) + '% (' + str(cvotes[i]) + ')\n')
+    txtout.write("---------------------------------------\n")
+    txtout.write("The winner is: " + cands[cvotes.index(max(cvotes))] + "\n")
+    txtout.write("---------------------------------------\n")
